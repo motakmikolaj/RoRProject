@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestKursRor</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= render partial: 'layouts/shared/navbar' %>
+    <div style="width: 1000px; margin: 50px auto">
+        <% if flash[:alert].present? %>
+          <div style="background: lightblue"><%= flash[:alert] %></div>
+        <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
